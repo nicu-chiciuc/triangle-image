@@ -1,3 +1,5 @@
+require("./index.html");
+require("./img.jpg");
 let triangulate = require("delaunay-triangulate");
 
 const width = 1000;
