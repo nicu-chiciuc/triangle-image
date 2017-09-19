@@ -1,7 +1,14 @@
 let triangulate = require("delaunay-triangulate");
 
-const width = 600;
-const height = 400;
+const width = 1000;
+const height = 800;
+const state = {
+  displayText: ""
+};
+
+window.changeText = newValue => {
+  state.displayText = newValue;
+};
 
 window.onload = function(event) {
   let canvas = document.getElementById("canvas");
@@ -44,7 +51,7 @@ window.onload = function(event) {
 
     function get3ColorAvg(context, pnts) {
       let c = pnts.map(pnt => getColorAtPoint(context, pnt));
-      // console.log(c)
+
       let avg = [
         parseInt((c[0][0] + c[1][0] + c[2][0]) / 3),
         parseInt((c[0][1] + c[1][1] + c[2][1]) / 3),
@@ -68,16 +75,14 @@ window.onload = function(event) {
     function step() {
       points.map(updatePnt);
 
-      // console.log(points[0])
+      const pntsArr = points.map(({ x, y }) => [x, y]);
 
-      let pntsArr = points.map(({ x, y }) => [x, y]);
-
-      let triangles = triangulate(pntsArr);
+      const triangles = triangulate(pntsArr);
 
       triangles.forEach(function(tri, index) {
-        let pntsNow = tri.map(pntNum => points[pntNum]);
+        const pntsNow = tri.map(pntNum => points[pntNum]);
 
-        let color = get3ColorAvg(bctx, pntsNow);
+        const color = get3ColorAvg(bctx, pntsNow);
 
         tri.color = color;
       });
@@ -106,9 +111,7 @@ window.onload = function(event) {
       ctx.globalAlpha = 1;
       ctx.font = "bold 360px hoge,impact";
 
-      var textToFill = "some";
-
-      if (textToFill.length) ctx.fillText(textToFill, 50, 350);
+      if (state.displayText.length) ctx.fillText(state.displayText, 50, 350);
 
       window.requestAnimationFrame(step);
     }

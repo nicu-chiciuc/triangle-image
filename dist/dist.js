@@ -114,8 +114,15 @@ function twoProduct(a, b, result) {
 
 var triangulate = __webpack_require__(3);
 
-var width = 600;
-var height = 400;
+var width = 1000;
+var height = 800;
+var state = {
+  displayText: ""
+};
+
+window.changeText = function (newValue) {
+  state.displayText = newValue;
+};
 
 window.onload = function (event) {
   var canvas = document.getElementById("canvas");
@@ -165,7 +172,7 @@ window.onload = function (event) {
       var c = pnts.map(function (pnt) {
         return getColorAtPoint(context, pnt);
       });
-      // console.log(c)
+
       var avg = [parseInt((c[0][0] + c[1][0] + c[2][0]) / 3), parseInt((c[0][1] + c[1][1] + c[2][1]) / 3), parseInt((c[0][2] + c[1][2] + c[2][2]) / 3)];
 
       return avg;
@@ -184,8 +191,6 @@ window.onload = function (event) {
 
     function step() {
       points.map(updatePnt);
-
-      // console.log(points[0])
 
       var pntsArr = points.map(function (_ref3) {
         var x = _ref3.x,
@@ -230,9 +235,7 @@ window.onload = function (event) {
       ctx.globalAlpha = 1;
       ctx.font = "bold 360px hoge,impact";
 
-      var textToFill = "some";
-
-      if (textToFill.length) ctx.fillText(textToFill, 50, 350);
+      if (state.displayText.length) ctx.fillText(state.displayText, 50, 350);
 
       window.requestAnimationFrame(step);
     }
