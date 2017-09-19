@@ -105,7 +105,10 @@ window.onload = function(event) {
       ctx.globalCompositeOperation = "destination-in";
       ctx.globalAlpha = 1;
       ctx.font = "bold 360px hoge,impact";
-      // ctx.fillText("mihaela",50,350);
+
+      var textToFill = "some";
+
+      if (textToFill.length) ctx.fillText(textToFill, 50, 350);
 
       window.requestAnimationFrame(step);
     }
