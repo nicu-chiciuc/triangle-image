@@ -3,6 +3,8 @@
 The current deployed version can be checked out on
 [nicu-chiciuc.github.io/triangle-image](https://nicu-chiciuc.github.io/triangle-image/).
 
+![Screen capture of the project ](https://raw.githubusercontent.com/nicu-chiciuc/triangle-image/master/examples/demo.gif)
+
 Be aware that for the first few seconds the application will look like it doesn't work. It starts slowly but afterwards there shouldn't be any problems
 
 Also try writing something in the box with the label "Write something".
