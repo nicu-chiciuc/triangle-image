@@ -3,11 +3,43 @@
 
 <head>
 	<title>Animated Triangulated Image</title>
+	<style>
+		.samebase-attribution {
+			align-items: center;
+			color: #394447;
+			display: inline-flex;
+			font: 12px system-ui, sans-serif;
+			gap: 4px;
+			min-height: 44px;
+			padding: 0 10px;
+			text-decoration: none;
+		}
+
+		.samebase-attribution img {
+			height: 14px;
+			width: 14px;
+		}
+
+		.samebase-attribution:focus-visible {
+			outline: 2px solid currentColor;
+			outline-offset: 2px;
+		}
+
+		#canvas {
+			display: block;
+		}
+	</style>
 </head>
 
 <body>
 	<label> Write something:</label>
 	<input style="display:block" type="text" oninput="changeText(this.value)">
+	<a class="samebase-attribution" href="https://samebase.com" target="_blank" rel="noopener noreferrer"
+		aria-label="Managed with Samebase">
+		<span>Managed with</span>
+		<img src="./samebase-logo.svg" alt="">
+		<span>Samebase</span>
+	</a>
 
 	<canvas id="back" style="display: none">
 
