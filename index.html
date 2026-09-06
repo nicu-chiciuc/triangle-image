@@ -7,18 +7,27 @@
 		.samebase-attribution {
 			align-items: center;
 			color: #394447;
-			display: inline-flex;
+			display: flex;
 			font: 12px system-ui, sans-serif;
-			gap: 4px;
+			margin: 0 10px 0 auto;
 			min-height: 44px;
-			padding: 0 10px;
+			padding: 0;
 			text-decoration: none;
+			width: max-content;
 		}
 
-		.samebase-attribution img {
-			height: 14px;
-			width: 14px;
+		.samebase-attribution svg {
+			display: inline-block;
+			height: 0.75em;
+			margin-right: 0.15em;
+			shape-rendering: crispEdges;
+			vertical-align: baseline;
+			width: 0.75em;
 		}
+
+		.samebase-attribution span { border-bottom: 1px solid transparent; white-space: nowrap; }
+
+		.samebase-attribution:hover span { border-bottom-color: currentColor; }
 
 		.samebase-attribution:focus-visible {
 			outline: 2px solid currentColor;
@@ -35,10 +44,9 @@
 	<label> Write something:</label>
 	<input style="display:block" type="text" oninput="changeText(this.value)">
 	<a class="samebase-attribution" href="https://samebase.com" target="_blank" rel="noopener noreferrer"
-		aria-label="Managed with Samebase">
-		<span>Managed with</span>
-		<img src="./samebase-logo.svg" alt="">
-		<span>Samebase</span>
+		aria-label="Managed with Samebase"><span>Managed with <b><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" aria-hidden="true">
+				<path d="M0 0h60v60H0z M20 20h20v20H20z" fill="currentColor" fill-rule="evenodd" />
+			</svg>Samebase</b></span>
 	</a>
 
 	<canvas id="back" style="display: none">

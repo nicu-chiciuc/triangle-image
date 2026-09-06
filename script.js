@@ -1,6 +1,5 @@
 require("./index.html");
 require("./img.jpg");
-require("./samebase-logo.svg");
 let triangulate = require("delaunay-triangulate");
 
 const width = 1000;
