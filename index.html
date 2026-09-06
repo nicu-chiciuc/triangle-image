@@ -40,14 +40,9 @@
 	</style>
 </head>
 
-<body>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
 	<label> Write something:</label>
 	<input style="display:block" type="text" oninput="changeText(this.value)">
-	<a class="samebase-attribution" href="https://samebase.com" target="_blank" rel="noopener noreferrer"
-		aria-label="Managed with Samebase"><span>Managed with <b><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" aria-hidden="true">
-				<path d="M0 0h60v60H0z M20 20h20v20H20z" fill="currentColor" fill-rule="evenodd" />
-			</svg>Samebase</b></span>
-	</a>
 
 	<canvas id="back" style="display: none">
 
@@ -58,6 +53,12 @@
 	</canvas>
 
 	<img src="./img.jpg" id="img.jpg" style="display: none">
+
+	<a class="samebase-attribution" href="https://samebase.com" target="_blank" rel="noopener noreferrer"
+		aria-label="Managed with Samebase"><span>Managed with <b><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" aria-hidden="true">
+				<path d="M0 0h60v60H0z M20 20h20v20H20z" fill="currentColor" fill-rule="evenodd" />
+			</svg>Samebase</b></span>
+	</a>
 
 	<script src="./dist.js">
 	</script>
