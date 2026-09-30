@@ -39,3 +39,11 @@ To serve the files in the folder `webpack-dev-server` can be invoked, or `http-s
 ## Deployement
 
 To deploy the project I used the workflow from [this article](http://pressedpixels.com/articles/deploying-to-github-pages-with-git-worktree/).
+
+## Cloudflare Worker Previews
+
+Workers Builds runs `npm run build`, then `npm run deploy` for the production
+branch or `npm run deploy:preview` for other branches.
+
+For the one-time Cloudflare setup, use the
+[Worker Previews migration guide](https://samebase.com/docs/cloudflare-previews-migration).
