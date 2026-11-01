@@ -49,4 +49,4 @@ the pull request closes. Production is retained when removing stack resources.
 
 Alchemy stores stack state in the `nicu` Convex team. The workflow uses the
 `CONVEX_ACCESS_TOKEN`, `CLOUDFLARE_API_TOKEN`, and `CLOUDFLARE_ACCOUNT_ID` repository
-secrets. Workers Builds is disabled after the production Worker is adopted.
+secrets. Workers Builds is disabled. Production deploys run in GitHub Actions.
