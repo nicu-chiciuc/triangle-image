@@ -40,10 +40,13 @@ To serve the files in the folder `webpack-dev-server` can be invoked, or `http-s
 
 To deploy the project I used the workflow from [this article](http://pressedpixels.com/articles/deploying-to-github-pages-with-git-worktree/).
 
-## Cloudflare Worker Previews
+## Deployment
 
-Workers Builds runs `npm run build`, then `npm run deploy` for the production
-branch or `npm run deploy:preview` for other branches.
+GitHub Actions builds with npm and webpack, then deploys `./dist` through Alchemy.
+Pushes to `master` update https://triangle-image.pfp.workers.dev.
+Pull requests deploy a `triangle-image-pr-<number>` Worker, which is deleted when
+the pull request closes. Production is retained when removing stack resources.
 
-For the one-time Cloudflare setup, use the
-[Worker Previews migration guide](https://samebase.com/docs/cloudflare-previews-migration).
+Alchemy stores stack state in the `nicu` Convex team. The workflow uses the
+`CONVEX_ACCESS_TOKEN`, `CLOUDFLARE_API_TOKEN`, and `CLOUDFLARE_ACCOUNT_ID` repository
+secrets. Workers Builds is disabled after the production Worker is adopted.
